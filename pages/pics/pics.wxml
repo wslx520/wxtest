@@ -1,0 +1,15 @@
+<!--pics.wxml-->
+<view class="choose-view">
+    <form action="" bindsubmit="formSubmit" report-submit>
+        <view>
+            <input type="text" name="title" placeholder="填写标题" class="title" />
+            <button bindtap="choosePics">选择图片</button>
+        </view>
+        <button bindtap="clip">改变图片显示方式</button>
+        <view class="view-list" wx:for="{{pics}}">
+            <textarea placeholder="输入描述文字" class="image-title" auto-height="true" name="pic-text-{{index}}"></textarea>
+            <image data-index="{{index}}" src="{{item.src}}" bindtap="previewPics" style="width:200px;height:200px;" mode="{{mode}}" ></image>
+        </view>
+        <button form-type="submit">提交</button>
+    </form>
+</view>

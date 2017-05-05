@@ -1,0 +1,72 @@
+/**index.wxss**/
+view {
+  display: block;
+  width: 100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.navigator {
+  line-height: 2em;
+}
+
+.pic-show {
+  width: 100%;
+}
+.pic-show ul{
+  font-size: 0;
+  position: relative;
+}
+.pic-show li {
+  position: relative;
+  display: inline-block;
+}
+.pic-show li:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.pic-show li > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.pic-show li .img {
+  width: 100%;
+  height: 100%;
+}
+.pic-show.pic3 li {
+  width: 33.33%;
+}
+.pic-show.pic2 li{
+  width: 50%;
+}
+.pic-show.pic1 li{
+  width: 100%;
+}
+.flex-test ul{
+    display: flex;
+}
+.flex-test ul{
+    display: flex;
+}

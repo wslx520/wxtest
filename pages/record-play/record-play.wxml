@@ -1,0 +1,20 @@
+<view>
+    <view>
+        <text>录音与播放</text>
+        <button bindtap="record">开始录音</button>
+        <button bindtap="stopRecord">停止录音并播放</button>
+        <button bindtap="pauseOrPlay">暂停/继续</button>
+        <button bindtap="saveVoice">保存录音文件</button>
+    </view>
+    <view class="blank">
+        <icon type="waiting">分隔线</icon>
+    </view>
+    <view class="play-music">
+        <text>音乐播放与控制</text>
+        <audio controls class="audio" id="my-music" src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46"></audio>
+        <button type="primary" bindtap="playMusic">开始播放</button>
+        <button bindtap="pauseMusic">暂停/继续</button>
+        <button bindtap="seekOne">跳至1分钟</button>
+        <button bindtap="seekStart">跳至开头</button>
+    </view>
+</view>

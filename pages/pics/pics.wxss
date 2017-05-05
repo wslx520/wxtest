@@ -1,0 +1,8 @@
+.title {
+    font-size: 36px;
+    line-height: 48px;
+    height: 48px;
+}
+.image-title {
+    height: 30px;
+}

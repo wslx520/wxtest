@@ -1,0 +1,7 @@
+.blank {
+    text-align: center;
+}
+.audio {
+    display: block;
+    line-height: 2;
+}

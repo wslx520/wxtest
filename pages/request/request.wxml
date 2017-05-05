@@ -1,0 +1,6 @@
+<view>
+    <form action="" bindsubmit="submit">
+        <input type="text" name="msg" placeholder="随便写点啥" />
+        <button form-type="submit">提交</button>
+    </form>
+</view>

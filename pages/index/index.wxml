@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <contact-button>联系客服</contact-button>
+  <view>
+  <navigator url="../pics/pics" class="navigator">选图-展示-预览</navigator>
+  <br />
+  <navigator url="../record-play/record-play" class="navigator">录音与音乐</navigator>
+  <navigator url="../request/request" class="navigator">发请求</navigator>
+  </view>
+  <view style="margin-top: 50rpx;">
+    <text style="text-align:center">伪图集</text>
+    <view wx:for="{{picsList}}" wx:for-item="ii">
+      <view class="pic-show pic{{ii.total >= 3 ? 3 : ii.total}}">
+        <text>{{ii.title}}</text>
+        <text>{{ii.date}}</text>
+        <text>{{ii.views}}view</text>
+        <view>
+          <ul>
+            <li wx:for="{{ii.list}}" wx:for-item="li">
+              <div class="content"><image src="{{li}}" class="img" mode="aspectFill"></image></div>
+            </li>
+          </ul>
+        </view>
+      </view>
+      <!--<view class="flex-test">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </view>-->
+    </view>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
