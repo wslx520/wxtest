@@ -21,7 +21,7 @@ Page({
             sizeType: ['original', 'compressed'],
             sourceType: ['album', 'camera'],
             success: function (res) {
-                var tempPaths = res.tempFilePaths;
+                var tempPaths = self.tempFilePaths = res.tempFilePaths;
                 console.log(res,tempPaths);
                 self.setData({
                     picUrls: tempPaths,
@@ -41,15 +41,43 @@ Page({
         })
     },
     formSubmit(e) {
-        console.log(e.detail.value);
+        console.log(e, e.detail.value);
         wx.showLoading();
-        setTimeout(function () {
-            wx.showModal({
-                title: '你提交的数据是',
-                content: JSON.stringify(e.detail.value)
-            })
-            wx.hideLoading();
-        }, 1000);
-        
+        // setTimeout(function () {
+        //     wx.showModal({
+        //         title: '你提交的数据是',
+        //         content: JSON.stringify(e.detail.value)
+        //     })
+        //     wx.hideLoading();
+        // }, 1000);
+        // wx.uploadFile({
+        //     url: 'http://www.test1.com/upload',
+        //     filePath: this.tempFilePaths[0],
+        //     name: 'xxx',
+        //     header: {},
+        //     formData: {
+        //         a: 'aaa'
+        //     },
+        //     success(res) {
+        //         // res = {data, errMsg, statusCode}
+        //         console.log(res);
+        //     },
+        //     complete() {
+        //         wx.hideLoading();
+        //     }
+        // });
+        wx.request({
+            // url 中不能有端口号
+            // url: 'http://www.test1.com/template-message',
+            url: 'http://www.test1.com/template-message',
+            method: 'POST',
+            data: {
+                formId: e.detail.formId
+            },
+            success(res) {
+                wx.showToast({title: JSON.stringify(res.data),
+                    duration: 10000});
+            }
+        })
     }
 })

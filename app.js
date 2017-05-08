@@ -13,7 +13,8 @@ App({
     }else{
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function (res) {
+          keepLogin(res);
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo
@@ -28,3 +29,19 @@ App({
     userInfo:null
   }
 })
+
+function keepLogin(res) {
+  console.log(res);
+  if (res.code) {
+    wx.request({
+      url: 'http://localhost/login',
+      method: 'POST',
+      data: {
+        code: res.code
+      },
+      success(res) {
+        console.log(res);
+      }
+    })
+  }
+}
